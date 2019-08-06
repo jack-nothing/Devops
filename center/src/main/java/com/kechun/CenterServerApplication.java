@@ -1,26 +1,23 @@
 package com.kechun;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 
 @EnableScheduling
-@EnableEurekaClient
+@EnableDiscoveryClient
+@EnableEurekaServer
 @SpringBootApplication
-public class EurekaApplication  {
-
-    private static final Logger LOG = LoggerFactory.getLogger(EurekaApplication.class);
+public class CenterServerApplication  {
 
     public static void main(String[] args) {
-        LOG.info("start");
-        SpringApplication.run(EurekaApplication .class, args);
-        LOG.info("start success");
+        SpringApplication.run(CenterServerApplication.class, args);
     }
 }
 
