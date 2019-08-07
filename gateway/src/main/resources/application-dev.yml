@@ -1,13 +1,39 @@
 spring:
   application:
     name: gateway
-  cloud:
-
   http:
     encoding:
       charset: utf-8
       enabled: true
       force: true
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: consumer-service
+        uri: lb://protal
+        predicates:
+        - Path=/user/**
+        filters:
+        - StripPrefix=1
+
+      - id: common-service
+        uri: lb://common
+        predicates:
+        - Path=/common/**
+        filters:
+        - StripPrefix=1
+
+      - id: fdfs-service
+        uri: lb://fdfs
+        predicates:
+        - Path=/fdfs/**
+        filters:
+        - StripPrefix=1
+
+
 
 server:
   port: 9995
@@ -15,11 +41,6 @@ server:
     uri-encoding: UTF-8
 
 eureka:
-  instance:
-    hostname: localhost
-  server:
-    enable-self-preservation: true
-    eviction-interval-timer-in-ms: 10000
   client:
     registerWithEureka: true
     fetchRegistry: true
@@ -33,6 +54,7 @@ logging:
     root: info
     org.springframework.web: info
     sample.mybatis.mapper: info
+    org.springframework.cloud.gateway: debug
   pattern:
     dateformat: yyyy-MM-dd HH:mm:ss
   path: /data/gateway

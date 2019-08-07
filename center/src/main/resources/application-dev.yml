@@ -1,5 +1,4 @@
 spring:
-total
   application:
     name: center
   http:
