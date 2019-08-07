@@ -1,6 +1,8 @@
 spring:
   application:
-    name: center
+    name: gateway
+  cloud:
+
   http:
     encoding:
       charset: utf-8
@@ -8,7 +10,7 @@ spring:
       force: true
 
 server:
-  port: 9999
+  port: 9995
   tomcat:
     uri-encoding: UTF-8
 
@@ -19,11 +21,10 @@ eureka:
     enable-self-preservation: true
     eviction-interval-timer-in-ms: 10000
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:9999/eureka/
-
 
 logging:
   file:
@@ -34,4 +35,6 @@ logging:
     sample.mybatis.mapper: info
   pattern:
     dateformat: yyyy-MM-dd HH:mm:ss
-  path: /data/center
+  path: /data/gateway
+
+test: 2344

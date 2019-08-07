@@ -12,10 +12,12 @@
         <version>2.1.1.RELEASE</version>
     </parent>
 
-
     <modules>
         <module>common</module>
+        <module>protal</module>
         <module>center</module>
+        <module>gateway</module>
+        <module>fdfs</module>
     </modules>
 
     <properties>

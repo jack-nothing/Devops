@@ -12,22 +12,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>center</name>
-    <dependencys>
-        <dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-            </dependency>
-        </dependency>
-    </dependencys>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 
 </project>

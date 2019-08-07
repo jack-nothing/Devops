@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: protal
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+
+server:
+  port: 9997
+  tomcat:
+    uri-encoding: UTF-8
+
+eureka:
+  instance:
+    hostname: localhost
+  server:
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 10000
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:9999/eureka/
+
+
+logging:
+  file:
+    max-size: 20MB
+  level:
+    root: info
+    org.springframework.web: info
+    sample.mybatis.mapper: info
+  pattern:
+    dateformat: yyyy-MM-dd HH:mm:ss
+  path: /data/protal
+
+test: 2344

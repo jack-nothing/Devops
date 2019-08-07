@@ -8,10 +8,18 @@
         <version>1.0</version>
     </parent>
     <groupId>com.kechun</groupId>
-    <artifactId>common</artifactId>
+    <artifactId>gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>common</name>
+    <name>gateway</name>
 
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
