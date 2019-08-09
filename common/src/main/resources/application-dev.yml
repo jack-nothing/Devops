@@ -6,25 +6,27 @@ spring:
       charset: utf-8
       enabled: true
       force: true
-
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oneheart?characterEncoding=UTF-8&useSSL=false&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull
+    username: xiekun
+    password: qazwsx123
 server:
   port: 9998
   tomcat:
     uri-encoding: UTF-8
 
 
-eureka:
-  instance:
-    hostname: localhost
-    data-center-info:
-      appname: common
-  client:
-    enabled: true
-    instanceInfoReplicationIntervalSeconds: 30
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://localhost:9999/eureka/
+mybatis-plus:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  typeAliasesPackage: com.kechun.entity
+  refresh: true
+  global-config:
+  #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    db-config:
+      db-type: mysql
+    refresh: true
 
 
 logging:
@@ -39,3 +41,16 @@ logging:
   path: /data/common
 
 
+
+eureka:
+  instance:
+    hostname: localhost
+    data-center-info:
+      appname: common
+  client:
+    enabled: true
+    instanceInfoReplicationIntervalSeconds: 30
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:9999/eureka/
