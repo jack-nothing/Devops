@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 @CrossOrigin("*")
 public class HelloController {
-
+//    @Value("${keyspaceApp:@null}")
 
     @RequestMapping("/demo")
     public String demo(){

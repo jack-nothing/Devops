@@ -7,10 +7,22 @@ spring:
       enabled: true
       force: true
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/oneheart?characterEncoding=UTF-8&useSSL=false&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull
     username: xiekun
     password: qazwsx123
+    initialSize: 10
+    maxActive: 200
+    validationQuery: select 1
+    minIdle: 10
+    filters: stat
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 50
+    minEvictableIdleTimeMillis: 300000
+    testWhileIdle: true
+
+
 server:
   port: 9998
   tomcat:
