@@ -47,5 +47,7 @@
             <artifactId>spring-cloud-config-client</artifactId>
             <version>1.4.3.RELEASE</version>
         </dependency>
+
+
     </dependencies>
 </project>
