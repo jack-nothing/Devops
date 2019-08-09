@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Primary;
 @MapperScan("com.kechun.dao")
 public class DataSourceConfiguration{
 
+    //初始化数据库连接池
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
     public DruidDataSource readDataSource(){
