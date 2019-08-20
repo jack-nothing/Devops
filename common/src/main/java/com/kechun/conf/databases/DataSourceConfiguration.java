@@ -1,4 +1,4 @@
-package com.kechun.conf;
+package com.kechun.conf.databases;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
