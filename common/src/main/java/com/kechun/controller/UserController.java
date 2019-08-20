@@ -11,7 +11,7 @@ public class UserController {
 
 
 
-    @GetMapping("/getUserList/{userId}")
+    @GetMapping("/getUserPageList/{userId}")
     public ContentSet getUserList(@PathVariable("userId") Integer userId){
 
 
