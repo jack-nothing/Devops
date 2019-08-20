@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class LogAspect {
 
 	public static final Logger log = LoggerFactory.getLogger(LogAspect.class);

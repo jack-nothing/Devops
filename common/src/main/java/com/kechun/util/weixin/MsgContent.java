@@ -1,6 +1,7 @@
 package com.kechun.util.weixin;
 
-import com.mycommon.config.Contants;
+
+import com.kechun.conf.Contants;
 
 import java.util.Map;
 

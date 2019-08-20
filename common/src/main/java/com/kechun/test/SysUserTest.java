@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = CommonApplication.class)
 public class SysUserTest {
@@ -47,4 +49,10 @@ public class SysUserTest {
         System.out.println(sysUser);
     }
 
+
+    @Test
+    public void test2(){
+        List<SysUser> list = sysUserService.selectList(null);
+        System.out.println(list);
+    }
 }
