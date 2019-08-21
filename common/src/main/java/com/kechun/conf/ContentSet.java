@@ -1,5 +1,6 @@
 package com.kechun.conf;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -16,6 +17,8 @@ public class ContentSet {
 
     //具体返回结果
     private Object content;
+    //分页时需要
+    private IPage pageInfo;
 
     //提示信息或者错误信息
     private String message;
@@ -24,4 +27,7 @@ public class ContentSet {
         return ContentSet.builder().message(message).statusCode(statusCode).content(content).build();
     }
 
+    public static ContentSet getContentSet(int statusCode,Object content,String message,IPage pageInfo){
+        return ContentSet.builder().message(message).statusCode(statusCode).content(content).pageInfo(pageInfo).build();
+    }
 }
