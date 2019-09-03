@@ -6,6 +6,13 @@ spring:
       charset: utf-8
       enabled: true
       force: true
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+  freemarker:
+    suffix: .html
   cloud:
     gateway:
       discovery:
@@ -32,14 +39,27 @@ spring:
         - Path=/fdfs/**
         filters:
         - StripPrefix=1
-
-
+    ##https://www.cnblogs.com/grasp/p/9448660.html
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: 123456
+    virtual-host: /testmq
+    listener:
+      simple:
+        #acknowledge-mode: manual #设置确认模式手工确认
+        concurrency: 3 #消费者最小数量
+        max-concurrency: 10 # 消费者最大数量
 
 server:
   port: 9995
   tomcat:
     uri-encoding: UTF-8
-
+    max-threads: 1000
+    min-spare-threads: 30
+  servlet:
+        context-path: /rabbitmq
 eureka:
   client:
     registerWithEureka: true
