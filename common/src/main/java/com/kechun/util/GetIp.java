@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class GetIp {
 
+    //nginx转发时，需要连ip一起带过来，否则拿到的ip只有nginx服务器的ip
     public static String getIpAddr(HttpServletRequest request) {
         String ip = request.getHeader("X-Forwarded-For");
         if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
